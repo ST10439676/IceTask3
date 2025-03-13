@@ -40,6 +40,11 @@ class Program {
         // Error Checking is performed on the previous line,
         // using the null coalescing operator (??).
         shape?.Display();
+        
+        // Do not need this on linux see IceTask3.csproj for the msbuild definitions
+#if PLATFORM_OSX || PLATFORM_WINDOWS
+        Console.ReadKey();
+#endif
 
     }
 }
